@@ -1,0 +1,3 @@
+rootProject.name = 'Urselect'
+
+include ':app'
