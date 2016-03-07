@@ -3,6 +3,7 @@ import React, {
   StyleSheet,
   Text,
   View,
+  Platform,
   TouchableOpacity,
 } from 'react-native'
 
@@ -48,6 +49,7 @@ export default {
 
 const styles = StyleSheet.create({
   navBarText: {
+    top: Platform.OS == 'ios' ? 0 : 24,
     fontSize: 14,
     color: '#fff',
   },
