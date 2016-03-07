@@ -33,7 +33,7 @@ export default class MainTabBar extends Component {
                         renderIcon={() => <Image style={styles.icon} source={require('./images/icon-home.imageset/icon-home.png')} />}
                         renderSelectedIcon={() => <Image style={styles.icon} source={require('./images/icon-home-active.imageset/icon-home-active.png')} />}
                         onPress={() => this.setState({ selectedTab: 'home' })}>
-                        <Home />
+                        <Home navigator={this.props.navigator}/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'category'}
@@ -42,7 +42,7 @@ export default class MainTabBar extends Component {
                         renderIcon={() => <Image style={styles.icon} source={require('./images/icon-category.imageset/icon-category.png')} />}
                         renderSelectedIcon={() => <Image style={styles.icon} source={require('./images/icon-category-active.imageset/icon-category-active.png')} />}
                         onPress={() => this.setState({ selectedTab: 'category' })}>
-                        <Category />
+                        <Category navigator={this.props.navigator}/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'cart'}
@@ -52,7 +52,7 @@ export default class MainTabBar extends Component {
                         renderSelectedIcon={() => <Image style={styles.icon} source={require('./images/icon-cart-active.imageset/icon-cart-active.png')} />}
                         //badgeText="1"
                         onPress={() => this.setState({ selectedTab: 'cart' })}>
-                        <Cart />
+                        <Cart navigator={this.props.navigator}/>
                     </TabNavigator.Item>
                     <TabNavigator.Item
                         selected={this.state.selectedTab === 'member'}
@@ -62,7 +62,7 @@ export default class MainTabBar extends Component {
                         renderSelectedIcon={() => <Image style={styles.icon} source={require('./images/icon-member-active.imageset/icon-member-active.png')} />}
                         //badgeText="1"
                         onPress={() => this.setState({ selectedTab: 'member' })}>
-                        <Member />
+                        <Member navigator={this.props.navigator} />
                     </TabNavigator.Item>
                 </TabNavigator>
             </View>
@@ -71,10 +71,9 @@ export default class MainTabBar extends Component {
 }
 
 const styles = StyleSheet.create({
-
     container: {
         flex: 1,
-        marginTop: 64,
+        marginTop: 44,
     },
     icon: {
         width: 25,

@@ -8,12 +8,21 @@ import React, {
 } from 'react-native'
 import LoadingView from '../share/LoadingView.react' 
 
-export default class Main extends Component {
+export default class MyInfo extends Component {
     render(){
         return (
-            <View>
-                <Text>内页面</Text>
+            <View style={styles.container}>
+                <Text>MyInfo</Text>
             </View>
         )
     }
 }
+
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginTop: 44,
+    },
+
+})

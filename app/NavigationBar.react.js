@@ -4,6 +4,7 @@ import React, {
   Text,
   View,
   Platform,
+  Image,
   TouchableOpacity,
 } from 'react-native'
 
@@ -40,7 +41,7 @@ export default {
     }
     return (
       <Text style={[styles.navBarText, styles.navBarTitleText]}>
-        {/*route.title*/}内页标题
+        {route.title}
       </Text>
     )
   },
