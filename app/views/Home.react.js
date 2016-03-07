@@ -8,11 +8,11 @@ import React, {
 } from 'react-native'
 import LoadingView from './share/LoadingView.react' 
 
-export default class Main extends Component {
+export default class Home extends Component {
     render(){
         return (
             <View>
-                <Text>内页面</Text>
+                <Text>Home</Text>
             </View>
         )
     }

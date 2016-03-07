@@ -17,7 +17,7 @@ export default {
         onPress={() => navigator.pop()}
         style={styles.navBarLeftButton}>
         <Image 
-           source={{uri:'../images/arrow_pressed.png'}}
+           source={require('./images/icon-back.imageset/icon-back.png')}
            style={styles.navBarLeftIcon} />
       </TouchableOpacity>
     )
@@ -58,6 +58,6 @@ const styles = StyleSheet.create({
    height:22,
   },
   rightBtnView:{
-    
+
   },
 })

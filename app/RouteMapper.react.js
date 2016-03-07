@@ -35,7 +35,7 @@ export default (route, navigator) => {
             return <MainTabBar navigator={navigator} />
 
         case 'home':
-            return <Home navigator={navigator} />
+            return <Home navigator={navigator} selectedTab='home'/>
         case 'list':
             return <List navigator={navigator} />
         case 'detail':
@@ -45,12 +45,12 @@ export default (route, navigator) => {
         case 'searchList':
             return <SearchList navigator={navigator} />
         case 'category':
-            return <Category navigator={navigator} />
+            return <Category navigator={navigator} selectedTab='category'/>
         case 'cart':
-            return <Cart navigator={navigator} />
+            return <Cart navigator={navigator} selectedTab='cart'/>
 
         case 'member':
-            return <Member navigator={navigator} />
+            return <Member navigator={navigator} selectedTab='member'/>
         case 'myOrder':
             return <MyOrder navigator={navigator} />
         case 'myAddress':
