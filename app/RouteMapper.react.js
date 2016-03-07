@@ -1,8 +1,9 @@
 'use strict'
+
 import React, {
-  StyleSheet,
-  Text,
-  View,
+    StyleSheet,
+    Text,
+    View,
 } from 'react-native'
 
 import MainTabBar from './MainTabBar.react'
@@ -29,50 +30,47 @@ import FindPassword from './views/accout/FindPassword.react'
 
 
 export default (route, navigator) => {
+    switch (route.name) {
+        case 'mainTabBar':
+            return <MainTabBar navigator={navigator} />
 
-    switch(route.name){
-      case 'home':
-          return <Home navigator={navigator} />
-      case 'list':
-          return <List navigator={navigator} />
-      case 'detail':
-          return <Detail navigator={navigator} />
-      case 'search':
-          return <Search navigator={navigator} />
-      case 'searchList':
-          return <SearchList navigator={navigator} />
-      case 'category':
-          return <Category navigator={navigator} />
-      case 'cart':
-          return <Cart navigator={navigator} />
+        case 'home':
+            return <Home navigator={navigator} />
+        case 'list':
+            return <List navigator={navigator} />
+        case 'detail':
+            return <Detail navigator={navigator} />
+        case 'search':
+            return <Search navigator={navigator} />
+        case 'searchList':
+            return <SearchList navigator={navigator} />
+        case 'category':
+            return <Category navigator={navigator} />
+        case 'cart':
+            return <Cart navigator={navigator} />
 
-      case 'member':
-          return <Member navigator={navigator} />
-      case 'myOrder':
-          return <MyOrder navigator={navigator} />
-      case 'myAddress':
-          return <MyAddress navigator={navigator} />
-      case 'editMyAddress':
-          return <EditMyAddress navigator={navigator} />
-      case 'myFavorites':
-          return <MyFavorites navigator={navigator} />
-      case 'myInfo':
-          return <MyInfo navigator={navigator} />
-      case 'myMessage':
-          return <MyMessage navigator={navigator} />
-      case 'myCoupons':
-          return <MyCoupons navigator={navigator} />
+        case 'member':
+            return <Member navigator={navigator} />
+        case 'myOrder':
+            return <MyOrder navigator={navigator} />
+        case 'myAddress':
+            return <MyAddress navigator={navigator} />
+        case 'editMyAddress':
+            return <EditMyAddress navigator={navigator} />
+        case 'myFavorites':
+            return <MyFavorites navigator={navigator} />
+        case 'myInfo':
+            return <MyInfo navigator={navigator} />
+        case 'myMessage':
+            return <MyMessage navigator={navigator} />
+        case 'myCoupons':
+            return <MyCoupons navigator={navigator} />
 
-      case 'login':
-          return <Login navigator={navigator} />
-      case 'reg':
-          return <Reg navigator={navigator} />
-      case 'findPassword':
-          return <FindPassword navigator={navigator} />
-
-        default:
-          return <MainTabBar navigator={navigator} />          
+        case 'login':
+            return <Login navigator={navigator} />
+        case 'reg':
+            return <Reg navigator={navigator} />
+        case 'findPassword':
+            return <FindPassword navigator={navigator} />
     }
-
 }
-

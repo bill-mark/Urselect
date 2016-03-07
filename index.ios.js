@@ -1,48 +1,47 @@
 'use strict'
 import React, {
   AppRegistry,
+  Navigator,
   Component,
   StyleSheet,
   Text,
-  View
+  View,
+  StatusBarIOS,
 } from 'react-native'
+
+import RouteMapper from './app/RouteMapper.react'
+import NavigationBar from './app/NavigationBar.react'
+
+StatusBarIOS.setStyle('light-content')
 
 class Urselect extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
+      <Navigator
+          style={styles.container}
+          initialRoute={{name: 'mainTabBar'}}
+          renderScene={RouteMapper}
+          navigationBar={
+            <Navigator.NavigationBar
+              routeMapper={NavigationBar}
+              style={styles.navBar}
+            />
+          }
+      />
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor:'#f8f8f8',
+    paddingTop: 20,
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  navBar: {
+    backgroundColor: '#ff666b',
+    height: 44,
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+})
 
-AppRegistry.registerComponent('Urselect', () => Urselect);
+AppRegistry.registerComponent('Urselect', () => Urselect)
