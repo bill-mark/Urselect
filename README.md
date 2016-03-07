@@ -2,7 +2,7 @@
 
 react native开发电商APP常用目录结构。
 
-(https://raw.githubusercontent.com/weianzi/Urselect/master/pic.png)
+![效果](https://raw.githubusercontent.com/weianzi/Urselect/master/pic.png)
 
 ### 安装依赖
 ```
