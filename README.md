@@ -1,9 +1,10 @@
 # Urselect
 
-react native电商APP常用目录结构。
+react native开发电商APP常用目录结构。
 
 ### 安装依赖
 ```
+根目录下命令行
 npm install
 ```
 
