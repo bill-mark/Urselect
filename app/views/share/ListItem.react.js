@@ -18,7 +18,7 @@ export default class ListItem extends Component {
           <TouchableHighlight 
               style={styles.container} 
               onPress={this._toDetail.bind(this, rowData.id)}
-              underlayColor='#fff'>
+              underlayColor='#f7f7f7'>
               <View style={styles.itemView}>
                   <Image 
                       source={{uri: rowData.img}}
@@ -48,16 +48,17 @@ export default class ListItem extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginRight:10,
-    marginLeft:10,
+    margin:10,
+    marginBottom:0,
   },
   itemView:{
       flex:1,
       flexDirection:'row',
-      padding:10,
-      marginTop:10,
-      borderBottomWidth: 1,
-      borderBottomColor: 'rgba(0,0,0,0.06)',
+      padding:10,      
+      borderWidth: Helper.device.pixel,
+      borderColor: '#f3f3f3',
+      borderBottomWidth: 2,
+      borderBottomColor: 'rgba(0,0,0,0.05)',
       backgroundColor:'#fff',
   },
   img:{
