@@ -6,8 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
+    "moment": "^2.12.0",
     "react-native": "^0.21.0",
     "react-native-scrollable-tab-view": "^0.4.0",
-    "react-native-tab-navigator": "^0.2.16"
+    "react-native-tab-navigator": "^0.2.16",
+    "react-native-viewpager": "^0.2.1"
   }
 }
