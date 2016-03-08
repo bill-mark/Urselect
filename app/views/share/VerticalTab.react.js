@@ -106,9 +106,10 @@ var MenuList = React.createClass({
           var style = this.state[prefixStyle + i + '_' + k];
           leftPannel.push(
             <TouchableOpacity
+                style={[styles.item, style]}
                 onPress={this.leftPress.bind(this, i, k)}
                 key={k}>
-                <Text style={[styles.left_row, style]}>
+                <Text style={[styles.left_row]}>
                   {k}
                 </Text>
             </TouchableOpacity>
@@ -134,6 +135,7 @@ var MenuList = React.createClass({
             for(var j in data[i][k]){
               rightPannel.push(
                 <TouchableOpacity
+                    style={styles.item}
                     onPress={this.props.click.bind(this, data[i][k][j])} 
                     key={j}>
                     <Text style={styles.left_row}>
@@ -202,6 +204,7 @@ var styles = StyleSheet.create({
   container:{
     //height:240,
     flex:1,
+    backgroundColor:'#fff',
     //borderTopWidth:1,
     //borderBottomWidth:1,
     //borderColor:'#ddd'
@@ -229,11 +232,17 @@ var styles = StyleSheet.create({
   left_pannel:{
     backgroundColor:'#F2F2F2',
   },
+  item:{
+    padding:10,
+  },
   left_row:{
-    height:30,
-    lineHeight:20,
+    //height:20,
+    lineHeight:20,    
     fontSize:14,
     color:'#7C7C7C',
+  },
+  right_row:{
+
   },
   right_pannel:{
     marginLeft:10
