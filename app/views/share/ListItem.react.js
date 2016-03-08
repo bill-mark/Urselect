@@ -21,20 +21,18 @@ export default class ListItem extends Component {
               underlayColor='#fff'>
               <View style={styles.itemView}>
                   <Image 
-                      style={styles.img}
-                      source={{uri: rowData.img}} />
+                      source={{uri: rowData.img}}
+                      style={styles.img} />
                   <View style={styles.info}>
                       <Text style={styles.title}>{rowData.title}</Text>
-                      <Text>
-                          <Text style={styles.newPrice}>¥{rowData.newPrice} </Text>
-                          <Text style={styles.oldPrice}>¥{rowData.oldPrice}</Text>
-                      </Text>
-                      <View style={styles.saleView}>
-                          <Text style={styles.sale}>{rowData.sale}人已经购买</Text>
-                      </View>
+                      <Text style={styles.sale}>已售出 {rowData.sale} 件 原价:{rowData.oldPrice}</Text>
+                      <Text style={styles.newPrice}>¥ {rowData.newPrice}</Text>
                   </View>
+                  <Image
+                      source={require('../../images/shopcarts.png')}
+                      style={styles.icon} />
               </View>
-            </TouchableHighlight>
+          </TouchableHighlight>
         )
     }
      _toDetail(itemId) {
@@ -58,6 +56,8 @@ const styles = StyleSheet.create({
       flexDirection:'row',
       padding:10,
       marginTop:10,
+      borderBottomWidth: 1,
+      borderBottomColor: 'rgba(0,0,0,0.06)',
       backgroundColor:'#fff',
   },
   img:{
@@ -71,29 +71,27 @@ const styles = StyleSheet.create({
   title:{
     fontSize: 15,
     lineHeight: 18,
-    marginBottom: 15,
+    marginBottom: 10,
     height: 35,
     overflow: 'hidden',
-  },
-  newPrice:{
-    fontSize: 16,
-    paddingRight: 10,
-  },
-  oldPrice:{
-    fontSize: 12,
-    color: '#999',
-  },
-  saleView:{
-    borderTopWidth: Helper.device.pixel,
-    borderColor:'#333',
-    marginTop: 5,
-    paddingTop: 5,
   },
   sale:{
     fontSize: 12,
     color: '#999',
   },
+  newPrice:{
+    fontSize: 16,
+    marginTop: 5,
+    color: '#ff666b',
+  },
 
+  icon:{
+    position:'absolute',
+    bottom:10,
+    right:10,
+    width:20,
+    height:20,
+  },
 })
 
 
