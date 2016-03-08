@@ -49,14 +49,14 @@ var MenuList = React.createClass({
     return obj;
   },
   render: function(){
-    var header = this.renderlHeader();
+    //var header = this.renderlHeader();
     var left = this.renderLeft();
     var right = this.renderRight();
     return (
       <View style={styles.container}>
-        <View style={[styles.row, styles.header]}>
+        {/*<View style={[styles.row, styles.header]}>
           {header}
-        </View>
+        </View>*/}
         <View style={[styles.row, styles.flex_1]}>
           <ScrollView style={[styles.flex_1, styles.left_pannel]}>
             {left}
@@ -71,7 +71,7 @@ var MenuList = React.createClass({
   },
 
   //渲染头部TabBar
-  renderlHeader: function(){
+/*  renderlHeader: function(){
     var data = this.props.data;
     var tabSelected = this.state.tabSelected;
     var header = [];
@@ -92,7 +92,7 @@ var MenuList = React.createClass({
       tabIndex ++;
     }
     return header;
-  },
+  },*/
 
   //渲染左侧
   renderLeft: function(){
@@ -105,8 +105,14 @@ var MenuList = React.createClass({
         for(var k in data[i]){
           var style = this.state[prefixStyle + i + '_' + k];
           leftPannel.push(
-            <Text onPress={this.leftPress.bind(this, i, k)}
-                  style={[styles.left_row, style]}>  {k}</Text>);
+            <TouchableOpacity
+                onPress={this.leftPress.bind(this, i, k)}
+                key={k}>
+                <Text style={[styles.left_row, style]}>
+                  {k}
+                </Text>
+            </TouchableOpacity>
+          );
         }
         break;
       }
@@ -127,7 +133,14 @@ var MenuList = React.createClass({
           if(this.state[prefixType + i + '_' + k]){
             for(var j in data[i][k]){
               rightPannel.push(
-                <Text onPress={this.props.click.bind(this, data[i][k][j])} style={styles.left_row}>{data[i][k][j]}</Text>);
+                <TouchableOpacity
+                    onPress={this.props.click.bind(this, data[i][k][j])} 
+                    key={j}>
+                    <Text style={styles.left_row}>
+                        {data[i][k][j]}
+                    </Text>
+                </TouchableOpacity>
+              );
             }
             break;
           }
@@ -158,7 +171,7 @@ var MenuList = React.createClass({
     this.setState(obj);
   },
   //头部点击事件即Tab切换事件
-  headerPress: function(title){
+/*  headerPress: function(title){
     var data = this.props.data;
     var index = 0;
     for(var i in data){
@@ -182,16 +195,16 @@ var MenuList = React.createClass({
       }
       index ++;
     }
-  }
+  }*/
 });
 
 var styles = StyleSheet.create({
   container:{
-    height:240,
+    //height:240,
     flex:1,
-    borderTopWidth:1,
-    borderBottomWidth:1,
-    borderColor:'#ddd'
+    //borderTopWidth:1,
+    //borderBottomWidth:1,
+    //borderColor:'#ddd'
   },
   row:{
     flexDirection: 'row'
@@ -199,7 +212,7 @@ var styles = StyleSheet.create({
   flex_1:{
     flex:1
   },
-  header:{
+/*  header:{
     height:35,
     borderBottomWidth:1,
     borderColor:'#DFDFDF',
@@ -208,7 +221,7 @@ var styles = StyleSheet.create({
   header_text:{
     color:'#7B7B7B',
     fontSize:15
-  },
+  },*/
   center:{
     justifyContent:'center',
     alignItems:'center'

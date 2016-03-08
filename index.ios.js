@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor:'#f8f8f8', //全局背景色
-    paddingTop: 20,
+    paddingTop: 2,
   },
   navBar: {
     backgroundColor: '#ff666b', //导航背景色

@@ -11,14 +11,16 @@ import MenuList from './share/VerticalTab.react'
 
 export default class Category extends Component {
     render(){
-        return (
-            <View style={styles.container}>
-                <MenuList data={data} nSelected={1} tabSelected={0} click={this._onPress}/>
-            </View>
+        return (            
+             <MenuList 
+               data={data} 
+               nSelected={1} 
+               tabSelected={0} 
+               click={this._onPress}/>
         )
     }
     _onPress(val){
-    alert(val)
+    //alert(val)
   }
 }
 
