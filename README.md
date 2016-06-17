@@ -1,8 +1,8 @@
 # Urselect
 
-react native开发电商APP常用目录结构。ES6，路由、导航、tab、手势切换场景...
+react native开发电商APP常用目录结构。ES6，路由、导航、tab、手势切换场景...(商业代码，源码只是很少少的部分)
 
-![效果](https://raw.githubusercontent.com/weianzi/Urselect/master/pic.png)
+![效果](https://github.com/weianzi/Urselect/blob/master/app.gif?raw=true)
 
 ### 安装依赖
 ```
